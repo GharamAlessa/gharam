@@ -12,7 +12,7 @@ class SelectedBeast extends react.Component {
             <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body onClick={this.props.voting}>
-            <img src={this.props.img}></img>
+            <img src={this.props.img} style={{ width: '12rem' }}></img>
             <p>{this.props.description}</p>
             <p>votes:💖{this.props.voting}</p>
           </Modal.Body>
