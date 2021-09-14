@@ -3,9 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 
-
 class HornedBeast extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -17,30 +15,34 @@ class HornedBeast extends React.Component {
       vote: this.state.vote + 1,
     });
   };
+  getSelectedData = () => {
+    this.props.handleopen();
+    this.props.getSelectedBeastData(
+      this.props.title,
+      this.props.image_url,
+      this.props.description
+    );
+  };
 
   render() {
     return (
       <div>
-
-
         <Col>
-          <Card  style={{ width: "18rem" }}>
+          <Card style={{ width: "18rem" }} onClick={this.getSelectedData}>
             <Card.Body>
-
               <Card.Img
                 onClick={this.voting}
                 variant="top"
                 src={this.props.image_url}
               />
-              <Card.Title>{this.props.title}❤️{this.state.vote}</Card.Title>
+              <Card.Title>
+                {this.props.title}❤️{this.state.vote}
+              </Card.Title>
               <Card.Text>{this.props.description}</Card.Text>
             </Card.Body>
           </Card>
-
         </Col>
-
       </div>
-
     );
   }
 }
