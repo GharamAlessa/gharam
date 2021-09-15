@@ -4,6 +4,7 @@ import Headre from "./components/Headre";
 import Footer from "./components/Footer";
 import HornedData from "./assets/HornedData.json";
 import SelectedBeast from "./components/SlecetedBeast";
+import Form from "react-bootstrap/Form";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends React.Component {
       description: "",
       img: "",
       title: "",
+      filterData: HornedData,
     };
   }
   handleopen = () => {
@@ -32,12 +34,36 @@ class App extends React.Component {
       description: description,
     });
   };
+  getNumOfHorns = (event) => {
+    let horns = parseInt(event.target.value);
+    let Data = HornedData.filter((item) => {
+      if (item.horns === horns) {
+        return true;
+      }
+    });
+    this.setState({
+      filterData: Data,
+    });
+  };
+
   render() {
     return (
       <div>
         <Headre />
+        <Form.Label>How many Horns?</Form.Label>
+        <Form.Select
+          aria-label="Default select example"
+          onChange={this.getNumOfHorns}
+        >
+         
+          <option value='1'>One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="100">Wow</option>
+        </Form.Select>
+
         <Main
-          data={HornedData}
+          data={this.state.filterData}
           handleopen={this.handleopen}
           getSelectedBeastData={this.getSelectedBeastData}
         />

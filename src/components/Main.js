@@ -19,7 +19,7 @@ class Main extends React.Component {
         <Row xs={1} md={3} className="g-4">
           <h1>{this.state.pageTitle}</h1>
 
-          {this.state.data.map((item) => {
+          {this.props.data.map((item) => {
             return (
               <HornedBeast
                 title={item.title}
