@@ -35,7 +35,7 @@ class App extends React.Component {
     });
   };
   getNumOfHorns = (event) => {
-    let horns = event.target.value;
+    let horns = parseInt(event.target.value);
     let Data = HornedData.filter((item) => {
       if (item.horns === horns) {
         return true;
@@ -55,8 +55,8 @@ class App extends React.Component {
           aria-label="Default select example"
           onChange={this.getNumOfHorns}
         >
-          <option value="All">All</option>
-          <option value="1">One</option>
+         
+          <option value='1'>One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
           <option value="100">Wow</option>
