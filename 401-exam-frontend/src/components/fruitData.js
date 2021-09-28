@@ -1,5 +1,5 @@
 {
-    "fruits": [
+    "fruits"= [
     {
     "name": "Apple",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",

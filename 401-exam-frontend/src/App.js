@@ -1,13 +1,15 @@
 import React from "react";
-import LogInForm from './Component/logInForm'
-import FruitData from './Component/FruitData';
-export class App extends Component
- {
+import LogInForm from "./components/logInForm";
+import FruitData from "./components/FruitData";
+import FavFrruit from "./components/favFrruit";
+export class App extends Component {
   render() {
     return (
       <>
         <LogInForm />
-        <FruitData/>
+        <FruitData />
+        <Fruit />
+        <FavFrruit />
       </>
     );
   }
